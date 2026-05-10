@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "User account information and preferences.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "lastActive": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email"]
+    },
+    "Interaction": {
+      "title": "AI Interaction",
+      "description": "Logs of user queries and Zoya AI responses.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "prompt": { "type": "string" },
+        "response": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "prompt", "response", "timestamp"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "User",
+      "description": "Individual user profiles."
+    },
+    "users/{userId}/interactions/{interactionId}": {
+      "schema": "Interaction",
+      "description": "User-specific AI interaction history."
+    }
+  }
+}
