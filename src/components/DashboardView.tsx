@@ -8,30 +8,39 @@ interface DashboardViewProps {
 export default function DashboardView({ onConnect }: DashboardViewProps) {
   return (
     <div className="relative min-h-[calc(100vh-88px)] flex flex-col items-center justify-center p-8 text-center overflow-hidden bg-black">
-      {/* Large Immersive Rotating Concentric Circles (Matches Reference Image) */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[150vw] md:w-[130vw] md:h-[130vw] pointer-events-none overflow-hidden z-0">
-        <motion.div 
-          animate={{ rotate: 360 }}
-          transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
-          className="w-full h-full relative"
-          style={{
-            background: `repeating-radial-gradient(
-              circle at center,
-              transparent 0px,
-              transparent 12px,
-              rgba(34, 211, 238, 0.08) 13px,
-              rgba(139, 92, 246, 0.08) 14px
-            )`
-          }}
-        >
-          {/* Enhanced Glow Layers for Depth */}
-          <div className="absolute inset-0 bg-radial from-transparent via-cyan-500/10 to-transparent blur-[150px] opacity-60" />
-          <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 via-transparent to-purple-600/20 mix-blend-overlay" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] rounded-full bg-radial from-purple-500/10 to-transparent blur-[80px]" />
-        </motion.div>
+      {/* Dynamic Emerging Concentric Circles Animation - Maximum Visibility */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none z-0">
+        {[...Array(8)].map((_, i) => (
+          <motion.div
+            key={i}
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ 
+              scale: [0, 1, 5], 
+              opacity: [0, 1, 0],
+              rotate: [0, 360]
+            }}
+            transition={{ 
+              duration: 12, 
+              repeat: Infinity, 
+              delay: i * 1.5,
+              ease: "linear"
+            }}
+            className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 shadow-[0_0_40px_rgba(34,211,238,0.6)] ${
+              i % 2 === 0 ? 'border-cyan-400' : 'border-purple-500'
+            }`}
+            style={{ 
+              width: '100vh', 
+              height: '100vh',
+            }}
+          />
+        ))}
         
-        {/* Dark Vignette to focus content */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,black_70%)]" />
+        {/* Maximum Intensity Core Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30vw] h-[30vw] bg-cyan-500/40 blur-[180px] rounded-full" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[20vw] h-[20vw] bg-purple-600/30 blur-[120px] rounded-full" />
+        
+        {/* Deep Black Surround */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_10%,black_85%)]" />
       </div>
 
       <motion.div
