@@ -44,6 +44,15 @@ service cloud.firestore {
         && data.response is string && data.response.size() <= 10000;
     }
 
+    // --- Contact Request Validation ---
+    function isValidContactRequest(data) {
+      return data.keys().hasAll(['fullName', 'email', 'message', 'createdAt'])
+        && data.keys().size() <= 6
+        && data.fullName is string && data.fullName.size() <= 100
+        && data.email is string && data.email.size() <= 256
+        && data.message is string && data.message.size() <= 5000;
+    }
+
     // 1. Users Collection
     match /users/{userId} {
       allow get: if isOwner(userId);
@@ -65,6 +74,14 @@ service cloud.firestore {
                        && incoming().timestamp == request.time;
         allow delete: if isOwner(userId);
       }
+    }
+
+    // 3. Contact Requests Collection
+    match /contact_requests/{requestId} {
+      allow create: if isValidContactRequest(incoming())
+                     && incoming().createdAt == request.time
+                     && (!('status' in incoming()) || incoming().status == 'new');
+      allow read, update, delete: if false; 
     }
   }
 }

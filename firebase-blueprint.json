@@ -25,6 +25,19 @@
         "timestamp": { "type": "string", "format": "date-time" }
       },
       "required": ["userId", "prompt", "response", "timestamp"]
+    },
+    "ContactRequest": {
+      "title": "Contact Request",
+      "description": "User inquiries and suggestions.",
+      "type": "object",
+      "properties": {
+        "fullName": { "type": "string" },
+        "email": { "type": "string" },
+        "message": { "type": "string" },
+        "status": { "type": "string", "enum": ["new", "read", "responded"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["fullName", "email", "message", "createdAt"]
     }
   },
   "firestore": {
@@ -35,6 +48,10 @@
     "users/{userId}/interactions/{interactionId}": {
       "schema": "Interaction",
       "description": "User-specific AI interaction history."
+    },
+    "contact_requests/{requestId}": {
+      "schema": "ContactRequest",
+      "description": "Collection of all contact form submissions."
     }
   }
 }
