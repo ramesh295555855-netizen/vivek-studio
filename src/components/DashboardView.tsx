@@ -64,7 +64,21 @@ export default function DashboardView({ onConnect }: DashboardViewProps) {
           </h1>
 
           <h2 className="text-3xl md:text-5xl font-black text-white max-w-3xl mx-auto drop-shadow-[0_0_30px_rgba(255,255,255,0.1)] leading-tight uppercase italic font-serif">
-            Engineering the <span className="text-cyan-400">Next Generation</span> of AI.
+            Engineering the <span className="relative inline-block px-2">
+              <span className="text-cyan-400">Next Generation</span>
+              <div className="absolute -bottom-2 left-0 w-full h-[1px] bg-cyan-500/20">
+                <motion.div 
+                  initial={{ left: "-100%" }}
+                  animate={{ left: "100%" }}
+                  transition={{ 
+                    duration: 3, 
+                    repeat: Infinity, 
+                    ease: "easeInOut" 
+                  }}
+                  className="absolute top-0 w-1/2 h-[2px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent shadow-[0_0_20px_#22d3ee] z-20"
+                />
+              </div>
+            </span> of AI.
           </h2>
 
           <p className="text-gray-400 text-base md:text-xl max-w-2xl mx-auto leading-relaxed font-light">
