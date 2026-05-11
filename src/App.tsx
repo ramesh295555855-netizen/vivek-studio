@@ -26,14 +26,13 @@ import CustomCursor from './components/CustomCursor';
 import LoadingScreen from './components/LoadingScreen';
 
 import AIDashboardView from './components/AIDashboardView';
-import PricingSection from './components/PricingSection';
 import ContactSection from './components/ContactSection';
 import FAQSection from './components/FAQSection';
 import Footer from './components/Footer';
 import ToolsView from './components/ToolsView';
 import BrainView from './components/BrainView';
 
-export type TabType = 'home' | 'features' | 'dashboard' | 'brain' | 'tools' | 'pricing' | 'contact' | 'creator' | 'updates';
+export type TabType = 'home' | 'features' | 'dashboard' | 'brain' | 'tools' | 'contact' | 'creator' | 'updates';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<TabType>('home');
@@ -55,13 +54,6 @@ export default function App() {
       case 'dashboard': return <AIDashboardView />;
       case 'brain': return <BrainView />;
       case 'tools': return <ToolsView />;
-      case 'pricing': return (
-        <div className="bg-black min-h-screen">
-          <PricingSection />
-          <FAQSection />
-          <Footer />
-        </div>
-      );
       case 'contact': return (
         <div className="bg-black min-h-screen">
           <ContactSection />
@@ -110,7 +102,6 @@ export default function App() {
               { id: 'dashboard', label: 'Dashboard' },
               { id: 'brain', label: 'Zoya AI' },
               { id: 'tools', label: 'Tools' },
-              { id: 'pricing', label: 'Pricing' },
               { id: 'contact', label: 'Contact' },
               { id: 'creator', label: 'Creator' },
             ].map((item) => (

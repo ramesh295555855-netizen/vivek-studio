@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Mail, MessageSquare, Instagram, Phone, Send, MapPin, Globe, CheckCircle2, Loader2 } from 'lucide-react';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
@@ -51,9 +51,8 @@ export default function ContactSection() {
           <div className="space-y-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
-                { icon: Mail, label: 'Email', value: 'ramesh295555855@gmail.com', color: 'bg-red-500/10 text-red-400', link: 'mailto:ramesh295555855@gmail.com' },
-                { icon: Instagram, label: 'Instagram', value: '@officialvivek', color: 'bg-pink-500/10 text-pink-400', link: '#' },
-                { icon: Phone, label: 'WhatsApp', value: '+91 9123456789', color: 'bg-green-500/10 text-green-400', link: 'https://wa.me/919123456789' },
+                { icon: Mail, label: 'Email', value: 'vivekgoswamirk@gmail.com', color: 'bg-red-500/10 text-red-400', link: 'mailto:vivekgoswamirk@gmail.com' },
+                { icon: Instagram, label: 'Instagram', value: 'velvet._vibes.x', color: 'bg-pink-500/10 text-pink-400', link: 'https://instagram.com/velvet._vibes.x' },
                 { icon: MessageSquare, label: 'Discord', value: 'santoshistudio#1234', color: 'bg-blue-500/10 text-blue-400', link: '#' }
               ].map((item, i) => (
                 <motion.a
@@ -67,6 +66,9 @@ export default function ContactSection() {
                   </div>
                   <h4 className="text-[10px] font-black text-white uppercase tracking-widest mb-1">{item.label}</h4>
                   <p className="text-gray-400 text-xs font-bold tracking-tight">{item.value}</p>
+                  {item.label === 'Instagram' && (
+                    <p className="text-cyan-400 text-[9px] font-black mt-1 uppercase tracking-tighter">For contact DM on Insta</p>
+                  )}
                 </motion.a>
               ))}
             </div>

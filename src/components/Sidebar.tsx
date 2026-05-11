@@ -22,7 +22,6 @@ export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
     { id: 'brain', icon: MessageSquare, label: 'Neuro AI' },
     { id: 'tools', icon: Sparkles, label: 'Tools' },
     { id: 'features', icon: RefreshCw, label: 'Features' },
-    { id: 'pricing', icon: DollarSign, label: 'Pricing' },
     { id: 'creator', icon: User, label: 'Creator' },
   ];
 

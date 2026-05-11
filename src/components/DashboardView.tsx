@@ -4,7 +4,6 @@ import StatsSection from './StatsSection';
 import ZoyaHighlightSection from './ZoyaHighlightSection';
 import ProjectShowcase from './ProjectShowcase';
 import TestimonialsSection from './TestimonialsSection';
-import PricingSection from './PricingSection';
 import FAQSection from './FAQSection';
 import ContactSection from './ContactSection';
 import Footer from './Footer';
@@ -161,7 +160,6 @@ export default function DashboardView({ onConnect }: DashboardViewProps) {
       <ProjectShowcase />
 
       <TestimonialsSection />
-      <PricingSection />
       <FAQSection />
       <ContactSection />
       <Footer />
