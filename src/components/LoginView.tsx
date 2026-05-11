@@ -51,7 +51,7 @@ export default function LoginView() {
             <div className="w-20 h-20 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-3xl flex items-center justify-center mx-auto shadow-lg shadow-cyan-500/30 rotate-3">
               <Sparkles className="w-10 h-10 text-white" />
             </div>
-            <h2 className="text-5xl font-black tracking-tighter text-white uppercase italic">Vivek <span className="text-cyan-400">Studio</span></h2>
+            <h2 className="text-4xl sm:text-5xl font-black tracking-tighter text-white uppercase italic font-display">Maa Santoshi <span className="text-cyan-400">Studio</span></h2>
             <p className="text-gray-400 font-medium lowercase tracking-tight">The ultimate dashboard for the neural future.</p>
           </div>
 

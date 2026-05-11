@@ -22,7 +22,7 @@ export default function Footer() {
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-purple-600 flex items-center justify-center shadow-lg shadow-cyan-500/20">
               <MessageSquare className="w-6 h-6 text-white" />
             </div>
-            <span className="text-2xl font-black tracking-tighter text-white">VIVEK STUDIO</span>
+            <span className="text-2xl font-black tracking-tighter text-white font-display">MAA SANTOSHI STUDIO</span>
           </div>
           <p className="text-gray-400 text-sm leading-relaxed max-w-xs font-medium">
             Next-generation AI services and agentic solutions for the global market. Empowering businesses with intelligence.
@@ -91,7 +91,7 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto px-8 mt-20 pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] font-black uppercase tracking-[0.3em] text-gray-600">
-        <p>© 2026 VIVEK STUDIO. ALL RIGHTS RESERVED.</p>
+        <p>© 2026 MAA SANTOSHI STUDIO. ALL RIGHTS RESERVED.</p>
         <div className="flex items-center space-x-8">
           <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
           <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

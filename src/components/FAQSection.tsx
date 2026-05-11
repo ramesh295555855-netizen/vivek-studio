@@ -5,8 +5,8 @@ import { ChevronDown, Plus, Minus, HelpCircle } from 'lucide-react';
 export default function FAQSection() {
   const faqs = [
     {
-      q: "What is Vivek Studio?",
-      a: "Vivek Studio is a premium AI consulting and development hub, specializing in building agentic systems, automated workflows, and high-end full-stack applications for the modern enterprise."
+      q: "What is Maa Santoshi Studio?",
+      a: "Maa Santoshi Studio is a premium AI consulting and development hub, specializing in building agentic systems, automated workflows, and high-end full-stack applications for the modern enterprise."
     },
     {
       q: "How can I start a project with you?",

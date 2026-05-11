@@ -23,7 +23,7 @@ export default function ContactSection() {
                 { icon: Mail, label: 'Email', value: 'ramesh295555855@gmail.com', color: 'bg-red-500/10 text-red-400', link: 'mailto:ramesh295555855@gmail.com' },
                 { icon: Instagram, label: 'Instagram', value: '@officialvivek', color: 'bg-pink-500/10 text-pink-400', link: '#' },
                 { icon: Phone, label: 'WhatsApp', value: '+91 9123456789', color: 'bg-green-500/10 text-green-400', link: 'https://wa.me/919123456789' },
-                { icon: MessageSquare, label: 'Discord', value: 'vivekstudio#1234', color: 'bg-blue-500/10 text-blue-400', link: '#' }
+                { icon: MessageSquare, label: 'Discord', value: 'santoshistudio#1234', color: 'bg-blue-500/10 text-blue-400', link: '#' }
               ].map((item, i) => (
                 <motion.a
                   key={i}

@@ -82,7 +82,7 @@ export default function ToolsView() {
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h3 className="text-4xl font-black text-white tracking-tighter leading-none uppercase italic">Build Your Own <br/><span className="text-cyan-400">AI Agent</span></h3>
-              <p className="text-gray-400 font-medium leading-relaxed">Leverage Vivek Studio's proprietary neural engine to create custom agents tailored to your business logic. A next-gen agentic builder platform.</p>
+              <p className="text-gray-400 font-medium leading-relaxed">Leverage Maa Santoshi Studio's proprietary neural engine to create custom agents tailored to your business logic. A next-gen agentic builder platform.</p>
               <button className="px-10 py-5 rounded-2xl bg-white text-black font-black text-xs uppercase tracking-widest hover:bg-cyan-400 transition-colors">Start Building (Beta)</button>
             </div>
             <div className="relative aspect-video rounded-3xl bg-black/40 border border-white/5 flex items-center justify-center overflow-hidden">

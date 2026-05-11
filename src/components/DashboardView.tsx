@@ -59,8 +59,8 @@ export default function DashboardView({ onConnect }: DashboardViewProps) {
             <span className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-300">V2.0 AI ECOSYSTEM IS LIVE</span>
           </div>
 
-          <h1 className="text-7xl md:text-9xl font-black tracking-tight leading-none text-white">
-            VIVEK <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">STUDIO</span>
+          <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-black tracking-tight leading-none text-white px-4 font-display">
+            MAA SANTOSHI <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">STUDIO</span>
           </h1>
 
           <h2 className="text-4xl md:text-6xl font-black text-white max-w-4xl mx-auto drop-shadow-[0_0_30px_rgba(255,255,255,0.1)] leading-tight uppercase italic font-serif">

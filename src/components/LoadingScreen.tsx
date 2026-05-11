@@ -27,7 +27,7 @@ export default function LoadingScreen() {
       </div>
 
       <div className="text-center space-y-2">
-        <h2 className="text-2xl font-black text-white tracking-widest uppercase italic">Vivek Studio</h2>
+        <h2 className="text-2xl font-black text-white tracking-widest uppercase italic">Maa Santoshi Studio</h2>
         <div className="flex items-center justify-center space-x-1">
           <span className="text-[10px] font-black text-gray-500 uppercase tracking-[0.4em]">Initializing Neural Links</span>
           <motion.span

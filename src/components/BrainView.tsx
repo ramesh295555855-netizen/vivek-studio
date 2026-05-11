@@ -138,7 +138,7 @@ export default function BrainView() {
               </div>
             </div>
             <p className="text-[8px] font-black text-gray-600 uppercase tracking-widest">
-              Secured by Vivek Studio Neural Engine
+              Secured by Maa Santoshi Studio Neural Engine
             </p>
           </div>
         </div>

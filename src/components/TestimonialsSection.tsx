@@ -38,7 +38,7 @@ export default function TestimonialsSection() {
             TRUSTED BY <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">LEADERS</span>
           </h2>
           <p className="text-gray-400 text-lg font-medium max-w-2xl mx-auto">
-            Don't take our word for it. Here's what visionary founders and tech leaders have to say about working with Vivek Studio.
+            Don't take our word for it. Here's what visionary founders and tech leaders have to say about working with Maa Santoshi Studio.
           </p>
         </div>
 
