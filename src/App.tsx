@@ -22,11 +22,21 @@ import HelpView from './components/HelpView';
 import AboutZoyaView from './components/AboutZoyaView';
 import CreatorView from './components/CreatorView';
 import LoginView from './components/LoginView';
+import CustomCursor from './components/CustomCursor';
+import LoadingScreen from './components/LoadingScreen';
 
-export type TabType = 'dashboard' | 'features' | 'updates' | 'settings' | 'help' | 'about' | 'creator';
+import AIDashboardView from './components/AIDashboardView';
+import PricingSection from './components/PricingSection';
+import ContactSection from './components/ContactSection';
+import FAQSection from './components/FAQSection';
+import Footer from './components/Footer';
+import ToolsView from './components/ToolsView';
+import BrainView from './components/BrainView';
+
+export type TabType = 'home' | 'features' | 'dashboard' | 'brain' | 'tools' | 'pricing' | 'contact' | 'creator' | 'updates';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<TabType>('dashboard');
+  const [activeTab, setActiveTab] = useState<TabType>('home');
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -40,23 +50,32 @@ export default function App() {
 
   const renderContent = () => {
     switch (activeTab) {
-      case 'dashboard': return <DashboardView onConnect={() => setActiveTab('creator')} />;
+      case 'home': return <DashboardView onConnect={() => setActiveTab('dashboard')} />;
       case 'features': return <FeaturesView />;
-      case 'updates': return <UpdatesView />;
-      case 'settings': return <SettingsView />;
-      case 'help': return <HelpView />;
-      case 'about': return <AboutZoyaView />;
+      case 'dashboard': return <AIDashboardView />;
+      case 'brain': return <BrainView />;
+      case 'tools': return <ToolsView />;
+      case 'pricing': return (
+        <div className="bg-black min-h-screen">
+          <PricingSection />
+          <FAQSection />
+          <Footer />
+        </div>
+      );
+      case 'contact': return (
+        <div className="bg-black min-h-screen">
+          <ContactSection />
+          <Footer />
+        </div>
+      );
       case 'creator': return <CreatorView />;
-      default: return <DashboardView onConnect={() => setActiveTab('creator')} />;
+      case 'updates': return <UpdatesView />;
+      default: return <DashboardView onConnect={() => setActiveTab('dashboard')} />;
     }
   };
 
   if (loading) {
-    return (
-      <div className="h-screen bg-black flex items-center justify-center">
-        <div className="w-16 h-16 border-4 border-cyan-400 border-t-transparent rounded-full animate-spin" />
-      </div>
-    );
+    return <LoadingScreen />;
   }
 
   if (!user) {
@@ -65,6 +84,7 @@ export default function App() {
 
   return (
     <div className="flex h-screen bg-black text-white font-sans overflow-hidden selection:bg-cyan-500/30">
+      <CustomCursor />
       {/* Dynamic background effect */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-cyan-500/10 blur-[120px] rounded-full animate-pulse" />
@@ -85,16 +105,19 @@ export default function App() {
           
           <div className="hidden md:flex items-center space-x-8 text-sm font-medium">
             {[
-              { id: 'dashboard', label: 'Home' },
-              { id: 'about', label: 'About Zoya' },
-              { id: 'features', label: 'Services' },
+              { id: 'home', label: 'Home' },
+              { id: 'features', label: 'Features' },
+              { id: 'dashboard', label: 'Dashboard' },
+              { id: 'brain', label: 'Zoya AI' },
+              { id: 'tools', label: 'Tools' },
+              { id: 'pricing', label: 'Pricing' },
+              { id: 'contact', label: 'Contact' },
               { id: 'creator', label: 'Creator' },
-              { id: 'updates', label: 'Exclusive' },
             ].map((item) => (
               <button
                 key={item.id}
                 onClick={() => setActiveTab(item.id as TabType)}
-                className={`relative transition-colors hover:text-cyan-400 ${
+                className={`relative transition-colors hover:text-cyan-400 font-bold uppercase tracking-widest text-[10px] ${
                   activeTab === item.id ? 'text-cyan-400' : 'text-gray-400'
                 }`}
               >

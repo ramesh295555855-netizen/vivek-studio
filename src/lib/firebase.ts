@@ -9,6 +9,43 @@ export const db = getFirestore(app, firebaseConfig.firestoreDatabaseId);
 
 const googleProvider = new GoogleAuthProvider();
 
+enum OperationType {
+  CREATE = 'create',
+  UPDATE = 'update',
+  DELETE = 'delete',
+  LIST = 'list',
+  GET = 'get',
+  WRITE = 'write',
+}
+
+interface FirestoreErrorInfo {
+  error: string;
+  operationType: OperationType;
+  path: string | null;
+  authInfo: {
+    userId?: string | null;
+    email?: string | null;
+    emailVerified?: boolean | null;
+    isAnonymous?: boolean | null;
+  }
+}
+
+function handleFirestoreError(error: unknown, operationType: OperationType, path: string | null) {
+  const errInfo: FirestoreErrorInfo = {
+    error: error instanceof Error ? error.message : String(error),
+    authInfo: {
+      userId: auth.currentUser?.uid,
+      email: auth.currentUser?.email,
+      emailVerified: auth.currentUser?.emailVerified,
+      isAnonymous: auth.currentUser?.isAnonymous,
+    },
+    operationType,
+    path
+  };
+  console.error('Firestore Error: ', JSON.stringify(errInfo));
+  throw new Error(JSON.stringify(errInfo));
+}
+
 export const signInWithGoogle = async () => {
   try {
     const result = await signInWithPopup(auth, googleProvider);
@@ -16,17 +53,40 @@ export const signInWithGoogle = async () => {
     
     // Create/update user doc
     const userRef = doc(db, 'users', user.uid);
-    await setDoc(userRef, {
-      uid: user.uid,
-      email: user.email,
-      displayName: user.displayName,
-      photoURL: user.photoURL,
-      lastActive: serverTimestamp(),
-      createdAt: serverTimestamp(), // Will be ignored if exists by rules or logic if we use updateDoc, but setDoc with merge is better
-    }, { merge: true });
+    let userSnap;
+    try {
+      userSnap = await getDoc(userRef);
+    } catch (error) {
+      handleFirestoreError(error, OperationType.GET, `users/${user.uid}`);
+    }
+    
+    try {
+      if (!userSnap?.exists()) {
+        await setDoc(userRef, {
+          uid: user.uid,
+          email: user.email,
+          displayName: user.displayName,
+          photoURL: user.photoURL,
+          lastActive: serverTimestamp(),
+          createdAt: serverTimestamp(),
+        });
+      } else {
+        await setDoc(userRef, {
+          lastActive: serverTimestamp(),
+          displayName: user.displayName,
+          photoURL: user.photoURL,
+          email: user.email,
+        }, { merge: true });
+      }
+    } catch (error) {
+      handleFirestoreError(error, OperationType.WRITE, `users/${user.uid}`);
+    }
     
     return user;
   } catch (error) {
+    if (error instanceof Error && error.message.includes('{"error":')) {
+      throw error;
+    }
     console.error('Login error:', error);
     throw error;
   }

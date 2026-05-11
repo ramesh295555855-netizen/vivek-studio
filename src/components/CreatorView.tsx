@@ -49,7 +49,7 @@ export default function CreatorView() {
               Vivek <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500">Kumar</span>
             </h2>
             <p className="text-gray-300 text-xl font-medium max-w-xl leading-relaxed">
-              Hailing from the historic land of <span className="text-white border-b border-cyan-500/50">Bihar, India</span>, 
+              Hailing from the historic land of <span className="text-white border-b border-cyan-500/50">India</span>, 
               Vivek is a visionary AI Architect who blends technical mastery with creative intuition to build 
               future-ready agentic ecosystems.
             </p>
@@ -58,7 +58,7 @@ export default function CreatorView() {
           <div className="space-y-4 text-gray-400 text-lg leading-relaxed border-l-4 border-cyan-500/30 pl-8 bg-gradient-to-r from-cyan-500/5 to-transparent py-4 rounded-r-2xl">
             <p className="italic font-medium text-gray-300 leading-snug">
               "Building technology isn't just about code; it's about shifting the paradigm of how humans interact with machines. 
-              Bihar has always been a center of knowledge, and I strive to carry that legacy forward into the AI revolution."
+              I strive to carry the legacy of knowledge forward into the AI revolution."
             </p>
           </div>
 
@@ -68,7 +68,7 @@ export default function CreatorView() {
             </button>
             <div className="flex items-center space-x-3 px-6 py-4 rounded-2xl bg-white/5 border border-white/10 text-sm text-gray-300 backdrop-blur-md">
               <MapPin className="w-5 h-5 text-red-500" />
-              <span className="font-bold tracking-tight">Bihar, IN</span>
+              <span className="font-bold tracking-tight">India</span>
             </div>
           </div>
 
@@ -130,7 +130,7 @@ export default function CreatorView() {
           <div className="space-y-3 relative z-10">
             <h4 className="text-3xl font-black tracking-tight">The Visionary Mind</h4>
             <p className="text-sm text-gray-400 leading-relaxed font-medium">
-              Based in <span className="text-white">Bihar, India</span>, Vivek combines deep-rooted local values with 
+              Based in <span className="text-white">India</span>, Vivek combines deep-rooted values with 
               unparalleled global technical expertise to provide cutting-edge solutions for the modern world.
             </p>
           </div>
@@ -149,7 +149,7 @@ export default function CreatorView() {
           </h2>
           <p className="text-gray-600 text-lg md:text-xl font-medium">
             Vivek is currently accepting high-impact projects and strategic partnerships. 
-            Elevate your business with Bihar's finest AI integration specialist.
+            Elevate your business with India's finest AI integration specialist.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
             <button className="w-full sm:w-auto px-12 py-5 rounded-3xl bg-black text-white font-black text-sm uppercase tracking-widest hover:scale-105 transition-transform">

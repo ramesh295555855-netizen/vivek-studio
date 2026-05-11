@@ -2,11 +2,11 @@ import {
   LayoutDashboard, 
   Sparkles, 
   RefreshCw, 
-  Settings, 
-  HelpCircle, 
   User, 
   MessageSquare,
-  Info
+  Info,
+  DollarSign,
+  Zap
 } from 'lucide-react';
 import { TabType } from '../App';
 
@@ -17,16 +17,17 @@ interface SidebarProps {
 
 export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
   const menuItems = [
-    { id: 'dashboard', icon: LayoutDashboard, label: 'Dashboard' },
-    { id: 'features', icon: Sparkles, label: 'Features' },
-    { id: 'updates', icon: RefreshCw, label: 'Updates' },
-    { id: 'about', icon: Info, label: 'About Zoya' },
+    { id: 'home', icon: LayoutDashboard, label: 'Home' },
+    { id: 'dashboard', icon: Zap, label: 'Portal' },
+    { id: 'brain', icon: MessageSquare, label: 'Neuro AI' },
+    { id: 'tools', icon: Sparkles, label: 'Tools' },
+    { id: 'features', icon: RefreshCw, label: 'Features' },
+    { id: 'pricing', icon: DollarSign, label: 'Pricing' },
     { id: 'creator', icon: User, label: 'Creator' },
   ];
 
   const bottomItems = [
-    { id: 'help', icon: HelpCircle, label: 'Help' },
-    { id: 'settings', icon: Settings, label: 'Settings' },
+    { id: 'contact', icon: MessageSquare, label: 'Contact' },
   ];
 
   return (
