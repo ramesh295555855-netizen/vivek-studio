@@ -27,29 +27,29 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <section className="py-24 relative bg-black">
-      <div className="max-w-7xl mx-auto px-8">
-        <div className="text-center space-y-4 mb-20">
+    <section className="py-20 relative bg-black">
+      <div className="max-w-6xl mx-auto px-8">
+        <div className="text-center space-y-3 mb-16">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-400 text-[10px] font-black uppercase tracking-[0.2em]">
             <Heart className="w-3 h-3" />
             <span>Success Stories</span>
           </div>
-          <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-white">
+          <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white">
             TRUSTED BY <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">LEADERS</span>
           </h2>
-          <p className="text-gray-400 text-lg font-medium max-w-2xl mx-auto">
+          <p className="text-gray-400 text-base font-medium max-w-xl mx-auto">
             Don't take our word for it. Here's what visionary founders and tech leaders have to say about working with Maa Santoshi Studio.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {reviews.map((item, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="p-10 rounded-[48px] bg-white/5 border border-white/5 hover:border-white/10 transition-all group flex flex-col space-y-8"
+              className="p-8 rounded-[40px] bg-white/5 border border-white/5 hover:border-white/10 transition-all group flex flex-col space-y-6"
             >
               <div className="flex items-center space-x-1">
                 {[...Array(item.rating)].map((_, j) => (

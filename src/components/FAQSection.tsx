@@ -27,22 +27,22 @@ export default function FAQSection() {
   ];
 
   return (
-    <section className="py-24 relative bg-black">
-      <div className="max-w-4xl mx-auto px-8">
-        <div className="text-center space-y-4 mb-20">
+    <section className="py-20 relative bg-black">
+      <div className="max-w-3xl mx-auto px-8">
+        <div className="text-center space-y-3 mb-16">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-[10px] font-black uppercase tracking-[0.2em]">
             <HelpCircle className="w-3 h-3" />
             <span>Support Center</span>
           </div>
-          <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-white">
+          <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white">
             GOT <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">QUESTIONS?</span>
           </h2>
-          <p className="text-gray-400 text-lg font-medium">
+          <p className="text-gray-400 text-base font-medium">
             Everything you need to know about our process and capabilities.
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-3">
           {faqs.map((faq, i) => (
             <FAQItem 
               key={`faq-${i}`} 

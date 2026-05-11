@@ -34,28 +34,28 @@ export default function PricingSection() {
   ];
 
   return (
-    <section className="py-24 relative bg-black overflow-hidden">
+    <section className="py-20 relative bg-black overflow-hidden">
       <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-cyan-500/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[50vw] h-[50vw] bg-purple-500/5 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-8 relative z-10">
-        <div className="text-center space-y-4 mb-20">
-          <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-white uppercase italic">
+      <div className="max-w-6xl mx-auto px-8 relative z-10">
+        <div className="text-center space-y-3 mb-16">
+          <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white uppercase italic font-display">
             Pick Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">Power</span>
           </h2>
-          <p className="text-gray-400 text-lg font-medium max-w-2xl mx-auto">
+          <p className="text-gray-400 text-base font-medium max-w-xl mx-auto">
             Competitive pricing models designed to scale with your ambition. No hidden costs, just raw intelligence.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {plans.map((plan, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className={`relative p-8 rounded-[40px] bg-white/5 border-2 ${plan.color} backdrop-blur-xl flex flex-col group`}
+              className={`relative p-8 rounded-[32px] bg-white/5 border-2 ${plan.color} backdrop-blur-xl flex flex-col group`}
             >
               {plan.highlight && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-cyan-400 text-black text-[10px] font-black uppercase tracking-widest shadow-lg shadow-cyan-400/30">
@@ -63,35 +63,35 @@ export default function PricingSection() {
                 </div>
               )}
               {!plan.highlight && (
-                <div className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-4">
+                <div className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-3">
                   {plan.tag}
                 </div>
               )}
 
-              <div className="space-y-4 mb-8">
-                <div className={`w-14 h-14 rounded-3xl bg-white/5 flex items-center justify-center mb-4 transition-transform group-hover:rotate-6`}>
-                  <plan.icon className={`w-7 h-7 ${plan.highlight ? 'text-cyan-400' : 'text-purple-400'}`} />
+              <div className="space-y-3 mb-6">
+                <div className={`w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-4 transition-transform group-hover:rotate-6`}>
+                  <plan.icon className={`w-6 h-6 ${plan.highlight ? 'text-cyan-400' : 'text-purple-400'}`} />
                 </div>
-                <h3 className="text-3xl font-black text-white tracking-tight">{plan.name}</h3>
+                <h3 className="text-2xl font-black text-white tracking-tight">{plan.name}</h3>
                 <div className="flex items-baseline space-x-1 text-white">
-                  <span className="text-5xl font-black">{plan.price}</span>
-                  {plan.price !== 'Custom' && <span className="text-gray-400 text-sm font-bold uppercase tracking-widest">/mo</span>}
+                  <span className="text-4xl font-black">{plan.price}</span>
+                  {plan.price !== 'Custom' && <span className="text-gray-400 text-xs font-bold uppercase tracking-widest">/mo</span>}
                 </div>
-                <p className="text-gray-500 text-sm font-medium leading-relaxed">
+                <p className="text-gray-500 text-xs font-medium leading-relaxed">
                   {plan.description}
                 </p>
               </div>
 
-              <div className="space-y-4 mb-8 flex-1">
+              <div className="space-y-3 mb-6 flex-1">
                 {plan.features.map((feature, j) => (
-                  <div key={j} className="flex items-center space-x-3 text-sm text-gray-300 font-bold tracking-tight">
-                    <Check className={`w-5 h-5 ${plan.highlight ? 'text-cyan-400' : 'text-gray-600'}`} />
+                  <div key={j} className="flex items-center space-x-3 text-xs text-gray-300 font-bold tracking-tight">
+                    <Check className={`w-4 h-4 ${plan.highlight ? 'text-cyan-400' : 'text-gray-600'}`} />
                     <span>{feature}</span>
                   </div>
                 ))}
               </div>
 
-              <button className={`w-full py-5 rounded-2xl font-black text-sm uppercase tracking-widest transition-all ${
+              <button className={`w-full py-4 rounded-xl font-black text-xs uppercase tracking-widest transition-all ${
                 plan.highlight 
                 ? 'bg-cyan-400 text-black hover:bg-cyan-300 shadow-xl shadow-cyan-400/20' 
                 : 'bg-white/5 text-white border border-white/10 hover:bg-white/10'

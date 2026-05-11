@@ -52,17 +52,17 @@ export default function BrainView() {
 
   return (
     <div className="flex flex-col h-[calc(100vh-140px)] bg-black p-4 md:p-8">
-      <div className="max-w-4xl mx-auto w-full flex-1 flex flex-col bg-white/5 border border-white/10 rounded-[40px] overflow-hidden shadow-2xl relative">
+      <div className="max-w-3xl mx-auto w-full flex-1 flex flex-col bg-white/5 border border-white/10 rounded-[32px] overflow-hidden shadow-2xl relative">
         <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-400 via-purple-500 to-cyan-400 animate-pulse" />
         
         {/* Chat Header */}
-        <div className="px-8 py-6 border-b border-white/10 flex items-center justify-between bg-black/40 backdrop-blur-xl">
-          <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 rounded-2xl bg-cyan-400 flex items-center justify-center shadow-lg shadow-cyan-400/20">
-              <Bot className="w-7 h-7 text-black" />
+        <div className="px-6 py-4 border-b border-white/10 flex items-center justify-between bg-black/40 backdrop-blur-xl">
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 rounded-xl bg-cyan-400 flex items-center justify-center shadow-lg shadow-cyan-400/20">
+              <Bot className="w-6 h-6 text-black" />
             </div>
             <div>
-              <h2 className="text-xl font-black text-white uppercase italic tracking-tighter">Zoya AI Core</h2>
+              <h2 className="text-lg font-black text-white uppercase italic tracking-tighter">Zoya AI Core</h2>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                 <span className="text-[10px] font-black text-green-500 uppercase tracking-widest">Neural Link Active</span>
@@ -79,7 +79,7 @@ export default function BrainView() {
         </div>
 
         {/* Message Container */}
-        <div ref={scrollRef} className="flex-1 overflow-auto p-8 space-y-6 custom-scrollbar">
+        <div ref={scrollRef} className="flex-1 overflow-auto p-6 space-y-4 custom-scrollbar">
           <AnimatePresence initial={false}>
             {messages.map((msg, i) => (
               <motion.div
@@ -108,7 +108,7 @@ export default function BrainView() {
         </div>
 
         {/* Input Area */}
-        <div className="p-8 border-t border-white/10 bg-black/40 backdrop-blur-xl">
+        <div className="p-6 border-t border-white/10 bg-black/40 backdrop-blur-xl">
           <div className="relative group">
             <input 
               type="text" 
@@ -116,14 +116,14 @@ export default function BrainView() {
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && handleSend()}
               placeholder="Query neural network..." 
-              className="w-full bg-white/5 border border-white/10 rounded-3xl px-8 py-5 pr-16 text-sm font-black text-white focus:outline-none focus:border-cyan-400/50 transition-all group-focus-within:bg-white/[0.08]"
+              className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 pr-14 text-xs font-black text-white focus:outline-none focus:border-cyan-400/50 transition-all group-focus-within:bg-white/[0.08]"
             />
             <button 
               onClick={handleSend}
               disabled={isTyping || !input.trim()}
-              className="absolute right-3 top-1/2 -translate-y-1/2 w-12 h-12 rounded-2xl bg-cyan-400 text-black flex items-center justify-center hover:bg-cyan-300 disabled:bg-gray-700 disabled:text-gray-500 transition-all active:scale-95 shadow-lg shadow-cyan-400/20"
+              className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-xl bg-cyan-400 text-black flex items-center justify-center hover:bg-cyan-300 disabled:bg-gray-700 disabled:text-gray-500 transition-all active:scale-95 shadow-lg shadow-cyan-400/20"
             >
-              <Send className="w-5 h-5" />
+              <Send className="w-4 h-4" />
             </button>
           </div>
           <div className="flex items-center justify-between mt-4 px-2">
