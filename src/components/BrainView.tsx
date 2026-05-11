@@ -11,7 +11,7 @@ interface Message {
 export default function BrainView() {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState<Message[]>([
-    { role: 'assistant', content: "Hello! I am Zoya, Vivek's neural assistant. I can help you with tech inquiries, the global tech scene, or just chat about AI. How can I assist you today?" }
+    { role: 'assistant', content: "Namaste! I am Zoya, your personal female AI agent from Maa Santoshi Studio. I'm here to do all your work and ensure your vision comes to life. Aapka creator (Vivek) ne mujhe bohot advanced banaya hai. How can I serve you today, boss?" }
   ]);
   const [isTyping, setIsTyping] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -58,19 +58,26 @@ export default function BrainView() {
         {/* Chat Header */}
         <div className="px-6 py-4 border-b border-white/10 flex items-center justify-between bg-black/40 backdrop-blur-xl">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-cyan-400 flex items-center justify-center shadow-lg shadow-cyan-400/20">
-              <Bot className="w-6 h-6 text-black" />
+            <div className="w-12 h-12 rounded-2xl overflow-hidden border-2 border-cyan-400 shadow-lg shadow-cyan-400/20">
+              <img 
+                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1976&auto=format&fit=crop" 
+                alt="Zoya" 
+                className="w-full h-full object-cover"
+              />
             </div>
             <div>
               <h2 className="text-lg font-black text-white uppercase italic tracking-tighter">Zoya AI Core</h2>
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                <span className="text-[10px] font-black text-green-500 uppercase tracking-widest">Neural Link Active</span>
+              <div className="flex flex-col">
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                  <span className="text-[10px] font-black text-green-500 uppercase tracking-widest">Neural Link Active</span>
+                </div>
+                <span className="text-[9px] font-bold text-gray-500 italic">Advanced Female AI Agent • Dedicated to your work</span>
               </div>
             </div>
           </div>
           <button 
-            onClick={() => setMessages([{ role: 'assistant', content: "Memory purged. How can I help you now?" }])}
+            onClick={() => setMessages([{ role: 'assistant', content: "Memory purged. Memory space is now clean. How can I help you, boss?" }])}
             className="p-3 rounded-xl bg-white/5 text-gray-500 hover:text-red-400 transition-colors"
             title="Clear Chat"
           >
@@ -88,18 +95,30 @@ export default function BrainView() {
                 animate={{ opacity: 1, y: 0 }}
                 className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
               >
-                <div className={`flex max-w-[85%] md:max-w-[70%] space-x-4 ${msg.role === 'user' ? 'flex-row-reverse space-x-reverse' : 'flex-row'}`}>
-                  <div className={`w-10 h-10 rounded-xl flex-shrink-0 flex items-center justify-center shadow-lg ${
-                    msg.role === 'user' ? 'bg-purple-600 text-white' : 'bg-cyan-500 text-black'
+                <div className={`flex max-w-[85%] md:max-w-[70%] space-x-3 ${msg.role === 'user' ? 'flex-row-reverse space-x-reverse' : 'flex-row'}`}>
+                  <div className={`w-10 h-10 rounded-xl flex-shrink-0 overflow-hidden shadow-lg border ${
+                    msg.role === 'user' ? 'bg-purple-600 border-purple-500' : 'bg-cyan-500 border-cyan-400'
                   }`}>
-                    {msg.role === 'user' ? <User className="w-5 h-5" /> : <Sparkles className="w-5 h-5" />}
+                    {msg.role === 'user' ? (
+                      <div className="w-full h-full flex items-center justify-center text-white"><User className="w-5 h-5" /></div>
+                    ) : (
+                      <img 
+                        src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1976&auto=format&fit=crop" 
+                        alt="Zoya" 
+                        className="w-full h-full object-cover"
+                      />
+                    )}
                   </div>
-                  <div className={`p-5 rounded-3xl text-sm font-bold leading-relaxed ${
+                  <div className={`p-4 rounded-2xl text-sm font-bold leading-relaxed ${
                     msg.role === 'user' 
-                    ? 'bg-purple-600/10 text-white border border-purple-500/20 rounded-tr-none' 
+                    ? 'bg-purple-600/20 text-white border border-purple-500/20 rounded-tr-none shadow-[0_10px_20px_-5px_rgba(147,51,234,0.2)]' 
                     : 'bg-white/5 text-gray-200 border border-white/5 rounded-tl-none'
                   }`}>
-                    {msg.content || (isTyping && <motion.div animate={{ opacity: [0, 1, 0] }} transition={{ duration: 1, repeat: Infinity }}>Generating response...</motion.div>)}
+                    {msg.content || (isTyping && <motion.div className="flex space-x-1" animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 1.5, repeat: Infinity }}>
+                      <div className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                    </motion.div>)}
                   </div>
                 </div>
               </motion.div>
