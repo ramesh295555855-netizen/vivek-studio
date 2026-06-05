@@ -24,6 +24,7 @@ import CreatorView from './components/CreatorView';
 import LoginView from './components/LoginView';
 import CustomCursor from './components/CustomCursor';
 import LoadingScreen from './components/LoadingScreen';
+import ProjectShowcase from './components/ProjectShowcase';
 
 import AIDashboardView from './components/AIDashboardView';
 import ContactSection from './components/ContactSection';
@@ -32,7 +33,7 @@ import Footer from './components/Footer';
 import ToolsView from './components/ToolsView';
 import BrainView from './components/BrainView';
 
-export type TabType = 'home' | 'features' | 'dashboard' | 'brain' | 'tools' | 'contact' | 'creator' | 'updates';
+export type TabType = 'home' | 'projects' | 'features' | 'dashboard' | 'brain' | 'tools' | 'contact' | 'creator' | 'updates';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<TabType>('home');
@@ -50,6 +51,12 @@ export default function App() {
   const renderContent = () => {
     switch (activeTab) {
       case 'home': return <DashboardView onConnect={() => setActiveTab('dashboard')} />;
+      case 'projects': return (
+        <div className="bg-black min-h-screen">
+          <ProjectShowcase />
+          <Footer />
+        </div>
+      );
       case 'features': return <FeaturesView />;
       case 'dashboard': return <AIDashboardView />;
       case 'brain': return <BrainView />;
@@ -98,6 +105,7 @@ export default function App() {
           <div className="hidden md:flex items-center space-x-8 text-sm font-medium">
             {[
               { id: 'home', label: 'Home' },
+              { id: 'projects', label: 'Projects' },
               { id: 'features', label: 'Features' },
               { id: 'dashboard', label: 'Dashboard' },
               { id: 'brain', label: 'Zoya AI' },

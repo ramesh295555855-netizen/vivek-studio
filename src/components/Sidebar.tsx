@@ -6,7 +6,8 @@ import {
   MessageSquare,
   Info,
   DollarSign,
-  Zap
+  Zap,
+  Briefcase
 } from 'lucide-react';
 import { TabType } from '../App';
 
@@ -18,6 +19,7 @@ interface SidebarProps {
 export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
   const menuItems = [
     { id: 'home', icon: LayoutDashboard, label: 'Home' },
+    { id: 'projects', icon: Briefcase, label: 'Projects' },
     { id: 'dashboard', icon: Zap, label: 'Portal' },
     { id: 'brain', icon: MessageSquare, label: 'Neuro AI' },
     { id: 'tools', icon: Sparkles, label: 'Tools' },

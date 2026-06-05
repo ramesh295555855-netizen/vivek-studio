@@ -1,8 +1,6 @@
 import { motion } from 'motion/react';
 import { ChevronRight, Eye, Sparkles, Zap, Globe, Cpu, Layout, MessageSquare } from 'lucide-react';
 import StatsSection from './StatsSection';
-import ZoyaHighlightSection from './ZoyaHighlightSection';
-import ProjectShowcase from './ProjectShowcase';
 import TestimonialsSection from './TestimonialsSection';
 import FAQSection from './FAQSection';
 import ContactSection from './ContactSection';
@@ -129,9 +127,6 @@ export default function DashboardView({ onConnect }: DashboardViewProps) {
         </div>
       </section>
 
-      {/* Zoya Introduction */}
-      <ZoyaHighlightSection />
-
       {/* Hero Mockup Area */}
       <section className="py-16 px-8 max-w-6xl mx-auto">
         <div className="relative p-1 bg-gradient-to-br from-cyan-400/20 via-purple-500/20 to-transparent rounded-[40px]">
@@ -155,9 +150,6 @@ export default function DashboardView({ onConnect }: DashboardViewProps) {
           </div>
         </div>
       </section>
-
-      {/* Project Samples */}
-      <ProjectShowcase />
 
       <TestimonialsSection />
       <FAQSection />
