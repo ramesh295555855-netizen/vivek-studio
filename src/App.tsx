@@ -40,6 +40,7 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<TabType>('home');
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
+  const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -91,14 +92,55 @@ export default function App() {
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.03]" />
       </div>
 
-      {/* Sidebar */}
+      {/* Sidebar for Desktop */}
       <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+
+      {/* Mobile Drawer Sidebar Slider */}
+      <AnimatePresence>
+        {isMobileSidebarOpen && (
+          <div className="fixed inset-0 z-50 md:hidden">
+            {/* Backdrop overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsMobileSidebarOpen(false)}
+              className="absolute inset-0 bg-black/80 backdrop-blur-md"
+            />
+            
+            {/* Sliding Sidebar panel */}
+            <motion.div
+              initial={{ x: '-100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '-100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 220 }}
+              className="absolute left-0 top-0 bottom-0 shadow-2xl"
+            >
+              <Sidebar 
+                activeTab={activeTab} 
+                setActiveTab={setActiveTab} 
+                isMobile={true} 
+                onClose={() => setIsMobileSidebarOpen(false)} 
+              />
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
 
       {/* Main Content */}
       <main className="flex-1 relative z-10 overflow-auto">
         {/* Navigation Bar (matches image) */}
         <nav className="sticky top-0 z-20 flex items-center justify-between px-8 py-6 bg-black/50 backdrop-blur-md border-b border-white/5">
-          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => setActiveTab('home')}>
+          <div 
+            className="flex items-center space-x-3 cursor-pointer select-none group" 
+            onClick={() => {
+              if (window.innerWidth < 768) {
+                setIsMobileSidebarOpen(!isMobileSidebarOpen);
+              } else {
+                setActiveTab('home');
+              }
+            }}
+          >
             <img 
               src={studioLogo} 
               alt="Maa Santoshi Studio" 
