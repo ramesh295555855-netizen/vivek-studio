@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Sparkles } from 'lucide-react';
+import studioLogo from '../assets/images/studio_logo_1780654565249.png';
 
 export default function LoadingScreen() {
   return (
@@ -11,7 +12,7 @@ export default function LoadingScreen() {
           className="w-32 h-32 rounded-full border-2 border-cyan-400/30 overflow-hidden shadow-2xl shadow-cyan-500/20"
         >
           <img 
-            src="/src/assets/images/studio_logo_1780654565249.png" 
+            src={studioLogo} 
             alt="Maa Santoshi Studio Logo" 
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover"

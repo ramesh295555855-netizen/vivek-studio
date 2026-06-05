@@ -26,6 +26,8 @@ import CustomCursor from './components/CustomCursor';
 import LoadingScreen from './components/LoadingScreen';
 import ProjectShowcase from './components/ProjectShowcase';
 
+import studioLogo from './assets/images/studio_logo_1780654565249.png';
+
 import AIDashboardView from './components/AIDashboardView';
 import ContactSection from './components/ContactSection';
 import FAQSection from './components/FAQSection';
@@ -100,7 +102,7 @@ export default function App() {
         <nav className="sticky top-0 z-20 flex items-center justify-between px-8 py-6 bg-black/50 backdrop-blur-md border-b border-white/5">
           <div className="flex items-center space-x-3 cursor-pointer" onClick={() => setActiveTab('home')}>
             <img 
-              src="/src/assets/images/studio_logo_1780654565249.png" 
+              src={studioLogo} 
               alt="Maa Santoshi Studio" 
               referrerPolicy="no-referrer"
               className="w-9 h-9 rounded-full object-cover border border-cyan-400/30 shadow-[0_0_15px_rgba(34,211,238,0.2)]"

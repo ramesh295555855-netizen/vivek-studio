@@ -10,6 +10,7 @@ import {
   Award,
   Sparkles
 } from 'lucide-react';
+import creatorImageInOffice from '../assets/images/creator_vivek_office_1780655146156.png';
 
 export default function CreatorView() {
   const stats = [
@@ -32,7 +33,7 @@ export default function CreatorView() {
           <div className="w-64 h-64 rounded-[40px] border-4 border-white/10 overflow-hidden relative z-10 p-2 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-500 shadow-2xl shadow-cyan-500/40 group">
             <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors z-20" />
             <img 
-              src="/src/assets/images/creator_vivek_office_1780655146156.png" 
+              src={creatorImageInOffice} 
               alt="Vivek Kumar" 
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover rounded-[32px] scale-110 group-hover:scale-100 transition-transform duration-700"

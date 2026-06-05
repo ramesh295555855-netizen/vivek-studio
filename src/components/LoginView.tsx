@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { useState } from 'react';
 import { LogIn, Sparkles, Shield, User, Loader2 } from 'lucide-react';
 import { signInWithGoogle } from '../lib/firebase';
+import studioLogo from '../assets/images/studio_logo_1780654565249.png';
 
 export default function LoginView() {
   const [isLoggingIn, setIsLoggingIn] = useState(false);
@@ -50,7 +51,7 @@ export default function LoginView() {
           <div className="space-y-4">
             <div className="w-24 h-24 rounded-full overflow-hidden mx-auto shadow-lg shadow-cyan-500/30 border-2 border-cyan-400/30 rotate-3 p-1 bg-white/10 backdrop-blur-md">
               <img 
-                src="/src/assets/images/studio_logo_1780654565249.png" 
+                src={studioLogo} 
                 alt="Maa Santoshi Studio" 
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover rounded-full"

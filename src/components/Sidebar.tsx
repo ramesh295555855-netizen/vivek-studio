@@ -10,6 +10,7 @@ import {
   Briefcase
 } from 'lucide-react';
 import { TabType } from '../App';
+import studioLogo from '../assets/images/studio_logo_1780654565249.png';
 
 interface SidebarProps {
   activeTab: TabType;
@@ -39,7 +40,7 @@ export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
           className="flex items-center space-x-3 cursor-pointer group"
         >
           <img 
-            src="/src/assets/images/studio_logo_1780654565249.png" 
+            src={studioLogo} 
             alt="Maa Santoshi Studio" 
             referrerPolicy="no-referrer"
             className="w-12 h-12 rounded-2xl object-cover border-2 border-cyan-500/30 shadow-lg shadow-cyan-500/15 group-hover:rotate-6 transition-transform"
