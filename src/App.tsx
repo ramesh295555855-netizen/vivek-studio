@@ -98,8 +98,16 @@ export default function App() {
       <main className="flex-1 relative z-10 overflow-auto">
         {/* Navigation Bar (matches image) */}
         <nav className="sticky top-0 z-20 flex items-center justify-between px-8 py-6 bg-black/50 backdrop-blur-md border-b border-white/5">
-          <div className="text-2xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
-            Vivek Kumar
+          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => setActiveTab('home')}>
+            <img 
+              src="/src/assets/images/studio_logo_1780654565249.png" 
+              alt="Maa Santoshi Studio" 
+              referrerPolicy="no-referrer"
+              className="w-9 h-9 rounded-full object-cover border border-cyan-400/30 shadow-[0_0_15px_rgba(34,211,238,0.2)]"
+            />
+            <div className="text-lg font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 uppercase italic font-display">
+              Maa Santoshi Studio
+            </div>
           </div>
           
           <div className="hidden md:flex items-center space-x-8 text-sm font-medium">

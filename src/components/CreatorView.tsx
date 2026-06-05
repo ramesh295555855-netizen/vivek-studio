@@ -32,8 +32,9 @@ export default function CreatorView() {
           <div className="w-64 h-64 rounded-[40px] border-4 border-white/10 overflow-hidden relative z-10 p-2 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-500 shadow-2xl shadow-cyan-500/40 group">
             <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors z-20" />
             <img 
-              src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1974&auto=format&fit=crop" 
+              src="/src/assets/images/creator_vivek_office_1780655146156.png" 
               alt="Vivek Kumar" 
+              referrerPolicy="no-referrer"
               className="w-full h-full object-cover rounded-[32px] scale-110 group-hover:scale-100 transition-transform duration-700"
             />
           </div>

@@ -33,9 +33,21 @@ export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
 
   return (
     <aside className="w-20 md:w-64 flex flex-col h-full bg-black/60 backdrop-blur-2xl border-r border-white/5 z-30 transition-all duration-300">
-      <div className="p-6 flex justify-center md:justify-start">
-        <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 flex items-center justify-center shadow-lg shadow-cyan-500/30 group cursor-pointer hover:rotate-6 transition-transform">
-          <MessageSquare className="w-7 h-7 text-white" />
+      <div className="p-6 flex justify-center md:justify-start border-b border-white/5 pb-6">
+        <div 
+          onClick={() => setActiveTab('home')}
+          className="flex items-center space-x-3 cursor-pointer group"
+        >
+          <img 
+            src="/src/assets/images/studio_logo_1780654565249.png" 
+            alt="Maa Santoshi Studio" 
+            referrerPolicy="no-referrer"
+            className="w-12 h-12 rounded-2xl object-cover border-2 border-cyan-500/30 shadow-lg shadow-cyan-500/15 group-hover:rotate-6 transition-transform"
+          />
+          <div className="hidden md:block">
+            <h1 className="text-xs font-black tracking-widest text-white leading-tight uppercase font-display italic">Maa Santoshi</h1>
+            <p className="text-[9px] font-bold text-cyan-400 uppercase tracking-widest leading-none">Studio</p>
+          </div>
         </div>
       </div>
 

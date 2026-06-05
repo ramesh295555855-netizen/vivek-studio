@@ -48,8 +48,13 @@ export default function LoginView() {
       >
         <div className="p-10 rounded-[40px] bg-white/5 border border-white/10 backdrop-blur-2xl shadow-2xl space-y-8 text-center">
           <div className="space-y-4">
-            <div className="w-20 h-20 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-3xl flex items-center justify-center mx-auto shadow-lg shadow-cyan-500/30 rotate-3">
-              <Sparkles className="w-10 h-10 text-white" />
+            <div className="w-24 h-24 rounded-full overflow-hidden mx-auto shadow-lg shadow-cyan-500/30 border-2 border-cyan-400/30 rotate-3 p-1 bg-white/10 backdrop-blur-md">
+              <img 
+                src="/src/assets/images/studio_logo_1780654565249.png" 
+                alt="Maa Santoshi Studio" 
+                referrerPolicy="no-referrer"
+                className="w-full h-full object-cover rounded-full"
+              />
             </div>
             <h2 className="text-4xl sm:text-5xl font-black tracking-tighter text-white uppercase italic font-display">Maa Santoshi <span className="text-cyan-400">Studio</span></h2>
             <p className="text-gray-400 font-medium lowercase tracking-tight">The ultimate dashboard for the neural future.</p>

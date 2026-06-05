@@ -6,11 +6,16 @@ export default function LoadingScreen() {
     <div className="fixed inset-0 z-[9999] bg-black flex flex-col items-center justify-center space-y-8">
       <div className="relative">
         <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-          className="w-32 h-32 rounded-[40px] border-2 border-white/5 bg-gradient-to-br from-cyan-400/20 to-purple-600/20 flex items-center justify-center backdrop-blur-xl shadow-2xl shadow-cyan-500/10"
+          animate={{ scale: [0.95, 1.05, 0.95] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+          className="w-32 h-32 rounded-full border-2 border-cyan-400/30 overflow-hidden shadow-2xl shadow-cyan-500/20"
         >
-          <Sparkles className="w-12 h-12 text-cyan-400" />
+          <img 
+            src="/src/assets/images/studio_logo_1780654565249.png" 
+            alt="Maa Santoshi Studio Logo" 
+            referrerPolicy="no-referrer"
+            className="w-full h-full object-cover"
+          />
         </motion.div>
         
         {/* Orbiting particles */}
