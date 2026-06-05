@@ -22,7 +22,6 @@ import HelpView from './components/HelpView';
 import AboutZoyaView from './components/AboutZoyaView';
 import CreatorView from './components/CreatorView';
 import LoginView from './components/LoginView';
-import CustomCursor from './components/CustomCursor';
 import LoadingScreen from './components/LoadingScreen';
 import ProjectShowcase from './components/ProjectShowcase';
 
@@ -85,7 +84,6 @@ export default function App() {
 
   return (
     <div className="flex h-screen bg-black text-white font-sans overflow-hidden selection:bg-cyan-500/30">
-      <CustomCursor />
       {/* Dynamic background effect */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-cyan-500/10 blur-[120px] rounded-full animate-pulse" />
